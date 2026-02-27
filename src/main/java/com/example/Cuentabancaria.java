@@ -36,7 +36,6 @@ public class Cuentabancaria {
     public void depositar(double cantidad) {
         if (cantidad > 0) {
             this.saldo += cantidad;
-            System.out.println("Depósito exitoso. Nuevo saldo: " + this.saldo);
         } else {
             System.out.println("Error: La cantidad a depositar debe ser positiva.");
         }
@@ -44,12 +43,11 @@ public class Cuentabancaria {
 
     // 5. Método para retirar
     public void retirar(double cantidad) {
-        if (cantidad <= 0) {
-            System.out.println("Error: La cantidad a retirar debe ser positiva.");
+        if (cantidad <= 0 && cantidad <= this.saldo) {
+            this.saldo -= cantidad;
         } else if (cantidad > this.saldo) {
             System.out.println("Error: Fondos insuficientes para retirar " + cantidad);
-        } else {
-            this.saldo -= cantidad;
+        } else 
             System.out.println("Retiro exitoso. Nuevo saldo: " + this.saldo);
         }
     }
