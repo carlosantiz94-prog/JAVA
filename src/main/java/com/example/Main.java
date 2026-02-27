@@ -13,6 +13,8 @@ public class Main {
         // Prueba 3: Usando el constructor completo
         Libro l3 = new Libro("El Señor de los Anillos", "J.R.R. Tolkien", 1200);
         l3.mostrarDetalles();
+         
+        System.out.println("--------------------------------------------------\n");
 
         //ejercicio2
 
@@ -20,6 +22,8 @@ public class Main {
         cuenta.depositar(200);
         System.out.println(cuenta.getSaldo()); // Debería ser 700
         cuenta.retirar(1000); // Debería mostrar error de fondos insuficiente
+
+         System.out.println("--------------------------------------------------\n");
 
         //ejercicio3
 
