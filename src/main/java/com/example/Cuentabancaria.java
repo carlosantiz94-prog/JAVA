@@ -1,14 +1,15 @@
 package com.example;
 
-public class CuentaBancaria {
-    // Atributos privados: nadie puede verlos o cambiarlos fuera de esta clase
+public class Cuentabancaria {
+
+    // Atributos privados (encapsulamiento)
     private String titular;
     private double saldo;
 
-    // 1. Constructor
-    public CuentaBancaria(String titular, double saldoInicial) {
+    // 1️ Constructor con validación
+    public Cuentabancaria(String titular, double saldoInicial) {
         this.titular = titular;
-        // Validación: si el saldo inicial es negativo, se pone en 0
+
         if (saldoInicial < 0) {
             this.saldo = 0;
         } else {
@@ -16,7 +17,7 @@ public class CuentaBancaria {
         }
     }
 
-    // 2. Getters y Setters
+    // 2️ Getter y Setter del titular
     public String getTitular() {
         return titular;
     }
@@ -25,28 +26,30 @@ public class CuentaBancaria {
         this.titular = titular;
     }
 
-    // Solo Getter para saldo (No hay setter por seguridad)
+    // 2️ SOLO Getter del saldo (sin setter)
     public double getSaldo() {
         return saldo;
     }
 
-    // 3. Método depositar
+    // 3️ Método depositar
     public void depositar(double cantidad) {
         if (cantidad > 0) {
-            this.saldo += cantidad;
+            saldo += cantidad;
+            System.out.println("Depósito realizado correctamente.");
         } else {
-            System.out.println("Error: La cantidad a depositar debe ser positiva.");
+            System.out.println("Error: La cantidad debe ser mayor que 0.");
         }
     }
 
-    // 4. Método retirar
+    // 4️ Método retirar
     public void retirar(double cantidad) {
-        if (cantidad > 0 && cantidad <= this.saldo) {
-            this.saldo -= cantidad;
-        } else if (cantidad > this.saldo) {
-            System.out.println("Error: Fondos insuficientes para retirar " + cantidad);
+        if (cantidad <= 0) {
+            System.out.println("Error: La cantidad debe ser mayor que 0.");
+        } else if (cantidad > saldo) {
+            System.out.println("Error: Fondos insuficientes.");
         } else {
-            System.out.println("Error: La cantidad a retirar debe ser positiva.");
+            saldo -= cantidad;
+            System.out.println("Retiro realizado correctamente.");
         }
     }
 }
