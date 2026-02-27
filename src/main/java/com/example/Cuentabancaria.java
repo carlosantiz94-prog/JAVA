@@ -1,12 +1,12 @@
 package com.example;
 
-public class Cuentabancaria {
+public class CuentaBancaria {
     // Atributos privados: nadie puede verlos o cambiarlos fuera de esta clase
     private String titular;
     private double saldo;
 
     // 1. Constructor
-    public Cuentabancaria(String titular, double saldoInicial) {
+    public CuentaBancaria(String titular, double saldoInicial) {
         this.titular = titular;
         // Validación: si el saldo inicial es negativo, se pone en 0
         if (saldoInicial < 0) {
