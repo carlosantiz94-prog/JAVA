@@ -21,7 +21,7 @@ public class Main {
         
 
         //* ejercicio2 */
-        CuentaBancaria cuenta = new CuentaBancaria("camilo", 500);
+        Cuentabancaria cuenta = new Cuentabancaria("camilo", 500);
         cuenta.depositar(200);
         System.out.println(cuenta.getSaldo()); // Debería ser 700
         cuenta.retirar(1000); // Debería mostrar error de fondos insuficiente

@@ -1,13 +1,13 @@
 package com.example;
 
-public class CuentaBancaria {
+public class Cuentabancaria {
 
     // Atributos privados (encapsulamiento)
     private String titular;
     private double saldo;
 
     // 1️ Constructor con validación
-    public CuentaBancaria(String titular, double saldoInicial) {
+    public Cuentabancaria(String titular, double saldoInicial) {
         this.titular = titular;
 
         if (saldoInicial < 0) {
